@@ -1,0 +1,10 @@
+# Mobius — Git Ignore
+.DS_Store
+*.bak
+test_project/
+
+# Implementation Plans
+MOBIUS_IMPLEMENTATION_PLAN.md
+MOBIUS_V2_CONTINUATION_PLAN.md
+MOBIUS_V2_1_SKILLS_EXPANSION_PLAN.md
+MOBIUS_CATALOG.md
