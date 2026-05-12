@@ -32,6 +32,10 @@ case $SUBCOMMAND in
         echo -e "\n${YELLOW}Web Skills:${NC}"
         find "$MOBIUS_HOME/plugins/web" -name "SKILL.md" | xargs dirname | xargs -n1 basename | sort | sed 's/^/  - /'
         
+        # Backend Plugins
+        echo -e "\n${YELLOW}Backend Skills:${NC}"
+        find "$MOBIUS_HOME/plugins/backend" -name "SKILL.md" | xargs dirname | xargs -n1 basename | sort | sed 's/^/  - /'
+        
         echo "──────────────────────────────────────────────"
         ;;
     *)
@@ -49,6 +53,10 @@ case $SUBCOMMAND in
             "$MOBIUS_HOME/plugins/web/vue/$SKILL_NAME/SKILL.md"
             "$MOBIUS_HOME/plugins/web/tanstack/$SKILL_NAME/SKILL.md"
             "$MOBIUS_HOME/plugins/web/shared/$SKILL_NAME/SKILL.md"
+            "$MOBIUS_HOME/plugins/backend/go/$SKILL_NAME/SKILL.md"
+            "$MOBIUS_HOME/plugins/backend/go/understand-codebase/SKILL.md"
+            "$MOBIUS_HOME/plugins/backend/go/security-audit/SKILL.md"
+            "$MOBIUS_HOME/plugins/backend/go/improvement-review/SKILL.md"
         )
         
         for path in "${POSSIBLE_PATHS[@]}"; do

@@ -14,6 +14,9 @@ detect_platform() {
     if [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then echo "android"; return; fi
     if [ -f "Package.swift" ] || ls *.xcodeproj &> /dev/null || ls *.xcworkspace &> /dev/null; then echo "ios"; return; fi
     
+    # Backend Detection
+    if [ -f "go.mod" ]; then echo "go"; return; fi
+    
     # Web Detection
     if [ -f "package.json" ]; then
         if grep -q "\"next\":" package.json; then echo "nextjs"; return; fi
@@ -53,6 +56,7 @@ echo -e "\n${BLUE}📝 Configuration Questionnaire:${NC}"
 
 # Load default common variables
 echo "PLATFORM=\"$PLATFORM\"" > "$MOBIUS_DIR/config/mobius.env"
+echo "MOBIUS_HOME=\"$MOBIUS_HOME\"" >> "$MOBIUS_DIR/config/mobius.env"
 echo "HAS_TANSTACK=\"$HAS_TANSTACK\"" >> "$MOBIUS_DIR/config/mobius.env"
 
 case $PLATFORM in
@@ -110,6 +114,21 @@ case $PLATFORM in
         TEMPLATE_TYPE="web"
         TEMPLATE_NAME="vue"
         ;;
+    go)
+        echo -n "Architecture (default: Microservice): " && read ARCH && ARCH=${ARCH:-Microservice}
+        echo -n "HTTP Framework (default: Gin): " && read FRAMEWORK && FRAMEWORK=${FRAMEWORK:-Gin}
+        echo -n "Database (default: PostgreSQL): " && read DB && DB=${DB:-PostgreSQL}
+        echo "GO_ARCH=\"$ARCH\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "HTTP_FRAMEWORK=\"$FRAMEWORK\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "DATABASE=\"$DB\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "SERVICE_TYPE=\"general\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "DB_DRIVER=\"sqlx\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "MESSAGE_BROKER=\"none\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "AUTH_TYPE=\"jwt\"" >> "$MOBIUS_DIR/config/mobius.env"
+        echo "DI_PATTERN=\"manual\"" >> "$MOBIUS_DIR/config/mobius.env"
+        TEMPLATE_TYPE="backend"
+        TEMPLATE_NAME="go-microservice"
+        ;;
     *)
         TEMPLATE_TYPE="mobile"
         TEMPLATE_NAME="flutter" # Fallback
@@ -130,6 +149,18 @@ if [ -f "$TEMPLATE_FILE" ]; then
 else
     echo -e "${RED}❌ Template not found: $TEMPLATE_FILE${NC}"
     exit 1
+fi
+
+# 4.5 Private Context Detection
+if [ -d "$MOBIUS_HOME/contexts/private" ] && [ "$(ls -A $MOBIUS_HOME/contexts/private 2>/dev/null)" ]; then
+  echo -e "\n${YELLOW}🔒 Private contexts available:${NC}"
+  ls "$MOBIUS_HOME/contexts/private" | grep "context"
+  echo -n "Select private context to load (or press enter to skip): "
+  read PRIVATE_CONTEXT
+  if [ -n "$PRIVATE_CONTEXT" ] && [ -f "$MOBIUS_HOME/contexts/private/$PRIVATE_CONTEXT" ]; then
+    cp "$MOBIUS_HOME/contexts/private/$PRIVATE_CONTEXT" "$MOBIUS_DIR/context.private.md"
+    echo -e "${GREEN}✓ Loaded private context: $PRIVATE_CONTEXT${NC}"
+  fi
 fi
 
 # 5. Generate Agent Files

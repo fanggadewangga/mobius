@@ -31,9 +31,18 @@
 - DO NOT change config files without asking
 - Run `{{LINT_CMD}}` before every commit
 
+## Mobius Integration
+- Framework Path: {{MOBIUS_HOME}}
+- **INSTRUCTION**: You are a Mobius-powered agent. Before performing any task, check for relevant skills in `{{MOBIUS_HOME}}/core/` and `{{MOBIUS_HOME}}/plugins/web/`.
+- **TRIGGERS**: Follow the triggers defined in `{{MOBIUS_HOME}}/plugins/web/plugin.md`.
+
 ## Active Skills
-- think-before-coding (always)
-- simplicity-first (always)
-- web-brainstorming (new features)
+- **Think Before Coding** (Karpathy)
+- **Simplicity First** (Karpathy)
+- **Brainstorming** (Superpowers)
+- **Planning** (Superpowers)
+- **TDD** (Superpowers)
+- web-brainstorming
+- typescript-strict (always active)
 - react-context (always)
 - {{TANSTACK_SKILLS}}

@@ -25,10 +25,19 @@
 - Use sealed classes for UI state.
 - DO NOT add Gradle dependencies without asking.
 
+## Mobius Integration
+- Framework Path: {{MOBIUS_HOME}}
+- **INSTRUCTION**: You are a Mobius-powered agent. Before performing any task, check for relevant skills in `{{MOBIUS_HOME}}/core/` and `{{MOBIUS_HOME}}/plugins/mobile/`.
+- **TRIGGERS**: Follow the triggers defined in `{{MOBIUS_HOME}}/plugins/mobile/plugin.md`.
+
 ## Active Skills
-- think-before-coding
-- simplicity-first
+- **Think Before Coding** (Karpathy)
+- **Simplicity First** (Karpathy)
+- **Brainstorming** (Superpowers)
+- **Planning** (Superpowers)
+- **TDD** (Superpowers)
 - no-hardcoded-strings (always active)
-- mvvm-pattern (when applicable)
+- mvvm-pattern
+- kotlin-flow-patterns
 - mvi-pattern (when applicable)
 - refactor-complex-function (always active)

@@ -29,9 +29,19 @@
 - DO NOT add packages to pubspec.yaml without asking.
 - Run `flutter analyze` before every commit.
 
+## Mobius Integration
+- Framework Path: {{MOBIUS_HOME}}
+- **INSTRUCTION**: You are a Mobius-powered agent. Before performing any task, check for relevant skills in `{{MOBIUS_HOME}}/core/` and `{{MOBIUS_HOME}}/plugins/mobile/`.
+- **TRIGGERS**: Follow the triggers defined in `{{MOBIUS_HOME}}/plugins/mobile/plugin.md`.
+
 ## Active Skills
-- think-before-coding
-- simplicity-first
+- **Think Before Coding** (Karpathy)
+- **Simplicity First** (Karpathy)
+- **Brainstorming** (Superpowers)
+- **Planning** (Superpowers)
+- **TDD** (Superpowers)
 - auto-route (navigation)
 - const-sizing (always active)
 - no-hardcoded-colors (always active)
+- flutter-change-splash (multi-flavor)
+- flutter-change-app-icon (multi-flavor)

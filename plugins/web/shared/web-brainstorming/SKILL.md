@@ -1,6 +1,6 @@
 ---
 name: web-brainstorming
-trigger: "new feature", "buat page", "buat component", "implement"
+trigger: "new feature", "create page", "create component", "implement"
 platform: web
 ---
 

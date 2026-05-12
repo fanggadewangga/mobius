@@ -20,8 +20,16 @@
 - Follow Vue 3 style guide
 - DO NOT mix Options and Composition API
 
+## Mobius Integration
+- Framework Path: {{MOBIUS_HOME}}
+- **INSTRUCTION**: You are a Mobius-powered agent. Before performing any task, check for relevant skills in `{{MOBIUS_HOME}}/core/` and `{{MOBIUS_HOME}}/plugins/web/`.
+- **TRIGGERS**: Follow the triggers defined in `{{MOBIUS_HOME}}/plugins/web/plugin.md`.
+
 ## Active Skills
-- think-before-coding
-- simplicity-first
+- **Think Before Coding** (Karpathy)
+- **Simplicity First** (Karpathy)
+- **Brainstorming** (Superpowers)
+- **Planning** (Superpowers)
+- **TDD** (Superpowers)
 - web-brainstorming
 - vue-context

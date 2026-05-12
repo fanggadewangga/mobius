@@ -1,6 +1,6 @@
 ---
 name: flutter-auto-route
-trigger: "navigasi", "navigate", "push", "pop", "route", "screen baru", "pindah halaman"
+trigger: "navigation", "navigate", "push", "pop", "route", "new screen", "change page"
 platform: mobile/flutter
 ---
 

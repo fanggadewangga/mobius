@@ -1,10 +1,8 @@
 # 🔄 MOBIUS — Professional AI Skills Framework
 
-> **"Where expertise meets AI cognition — across Mobile, Web, and Beyond."**
+> **"Where expertise meets AI cognition — across Mobile, Web, and Backend."**
 
 Mobius is a **modular skills framework and context injection system** designed to align AI coding agents with professional development standards. It bridges the gap between raw LLM capabilities and your team's specific expertise, patterns, and workflows.
-
-This repository is a collection of **workflows and skills** that I use daily in my professional work and personal projects. It's designed to be a portable, zero-dependency "brain" for AI agents.
 
 ---
 
@@ -13,70 +11,116 @@ This repository is a collection of **workflows and skills** that I use daily in 
 Mobius follows a **Core + Plugins** architecture:
 1. **Core Skills**: Universal cognitive principles (Think Before Coding, Simplicity First, Surgical Changes).
 2. **Workflow Skills**: Structured execution phases (Brainstorm → Plan → TDD → Debug → Review).
-3. **Platform Plugins**: Specific expertise for **Flutter**, **Android**, **iOS**, and modern **Web** (React, Next.js, Vue, TanStack).
+3. **Platform Plugins**: Specific expertise for **Flutter**, **Android**, **iOS**, **Web**, and **Go Backend**.
+4. **Private Contexts**: Secure, team-specific conventions stored in private submodules.
 
 ---
 
 ## 🛠 Features
 
-- **Multi-Agent Support**: Generate unified context for Claude Code, Cursor (.mdc), GitHub Copilot, Windsurf, and more.
-- **Smart Platform Detection**: Automatically detects project types (Flutter, Android, React, etc.) and suggests relevant plugins.
-- **Team-Specific Safeguards**: Enforce conventions like `auto_route` patterns, `SizesApp` constants, and `no-hardcoded-strings`.
-- **Modular Plugin System**: Add or remove platform-specific expertise without bloating your project context.
-- **Impact Tracking (`mob diff`)**: Built-in statistical reporting to measure how much Mobius improves AI efficiency (fewer rework iterations, higher build success).
-- **Interactive Skill Creation**: Wizard-based workflow to capture and codify new patterns as you find them.
+- **Multi-Agent Support**: Generate unified context for Claude Code, Cursor (.mdc), GitHub Copilot, and more.
+- **Smart Platform Detection**: Automatically detects project types (Flutter, Go, React, etc.) and suggest relevant plugins.
+- **Financial-Grade Security**: Built-in Go security audit workflows with 15+ vulnerability patterns.
+- **Private Context Strategy**: Keep internal team conventions (internal service names, folder structures) private while keeping skills public.
+- **Deep Codebase Understanding**: Automated generation of Mermaid diagrams and service boundary maps.
+- **Impact Tracking (`mobius diff`)**: Measure AI efficiency gains (fewer rework iterations, higher build success).
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-├── cli/              # Mobius CLI (the 'mob' command)
+├── cli/              # Mobius CLI (the 'mobius' command)
 ├── core/             # Universal cognitive and workflow skills
 ├── plugins/          # Platform-specific expertise
 │   ├── mobile/       # Flutter, Android, iOS skills
-│   └── web/          # React, Vue, TanStack, TypeScript skills
+│   ├── web/          # React, Vue, TanStack skills
+│   └── backend/      # Go Microservice skills
 ├── templates/        # Base context templates per platform
-└── MOBIUS_CATALOG.md # (Ignored) Full command documentation
+└── contexts/         # (Optional) Private submodules for team context
 ```
 
 ---
 
-## 🌟 Inspiration & Credits
-
-Mobius is built on the shoulders of giants. This framework wouldn't be possible without the influence of:
-
-- **[Superpowers](https://github.com/superpowers-ai/superpowers)**: For the foundational "Goal-Driven Execution" and the structured agentic workflow (Brainstorm → Plan → Execute → Review) that forms the core of Mobius.
-- **[Andrej Karpathy](https://github.com/karpathy)**: For inspiring the cognitive "Karpathy Skills" (Think Before Coding, Simplicity First, Surgical Changes) and the vision of an LLM-centric developer workflow.
-
----
-
-## 🏗️ Usage
+## 🏗️ Getting Started
 
 ### 1. Installation
 Add an alias to your `~/.zshrc` or `~/.bashrc`:
 ```bash
-alias mob='/path/to/mobius/cli/mobius.sh'
+alias mobius='/path/to/mobius/cli/mobius.sh'
 ```
 
 ### 2. Initialize a Project
+Navigate to your project directory and run:
 ```bash
-mob init
+mobius init
 ```
-This will detect your platform and create a `.mobius/` folder with tailored project instructions.
+This will:
+1. Detect your platform (e.g., Flutter or Go).
+2. Ask specific configuration questions (Architecture, DI, etc.).
+3. Detect if private contexts are available.
+4. Create a `.mobius/` folder with tailored instructions for your AI agent.
 
-### 3. Management
-- `mob on/off`: Quickly toggle Mobius instructions.
-- `mob sync`: Distribute context updates to all agent files (CLAUDE.md, etc.).
-- `mob skill list`: Browse available expertise.
-- `mob skill create`: Codify a new pattern into a reusable skill.
-
-### 4. Impact Measurement
+### 3. Setup Private Contexts (Optional)
+To use internal team conventions without exposing them in public repositories:
 ```bash
-mob diff baseline   # Record stats before using Mobius
-mob diff record     # Record stats after a task with Mobius
-mob diff report     # See the delta and efficiency gain
+mobius context add-private [your-private-git-url]
 ```
+This adds a private submodule to `contexts/private/`. Ensure your `.gitignore` excludes this directory from the public Mobius repo.
+
+---
+
+## 📖 Using Mobius
+
+### Skill Execution
+Skills are triggered by specific keywords in your chat with the AI.
+- **Flutter**: "change splash screen", "add new route", "fix sizing"
+- **Go**: "security audit", "pahami codebase", "refactor concurrency"
+- **Web**: "create page", "setup tanstack query"
+
+### Context Syncing
+Whenever you change `.mobius` configurations or update Mobius skills, run:
+```bash
+mobius sync
+```
+This ensures all agent-specific files (like `CLAUDE.md` or `.cursor/rules/`) are up to date.
+
+### 4. Working with AI Agents
+Once initialized, your AI agent (Claude Code, Cursor, Windsurf, etc.) will read the `.mobius/` context. 
+- **Instruction**: Tell your agent: *"Read the Mobius context in .mobius/ and use the skills from my Mobius Home directory."*
+- **Auto-Loading**: Agents like Cursor will automatically detect `.cursor/rules/mobius.mdc`.
+- **Keywords**: Use the triggers defined in the plugins (e.g., "pahami codebase", "audit security") to activate specific workflows.
+
+---
+
+## 🛠️ Management Commands
+
+| Command | Description |
+|---|---|
+| `mobius skill list` | Browse all available expertise |
+| `mobius skill create` | Wizard to codify a new pattern into a skill |
+| `mobius docs generate` | Generate deep-dive docs with Mermaid diagrams |
+| `mobius audit run` | Run a financial security audit on a service |
+| `mobius review run` | Run a performance and reliability review |
+| `mobius doctor` | Check the health of your Mobius installation |
+
+---
+
+## ✍️ Adding New Skills
+
+Mobius is designed to be expanded. To add a new skill:
+1. Create a directory in `plugins/[category]/[platform]/[skill-name]/`.
+2. Add a `SKILL.md` file with the following frontmatter:
+```yaml
+---
+name: your-skill-name
+trigger: "keyword1", "keyword2"
+platform: mobile/flutter # or backend/go, etc.
+---
+# Skill Content
+...
+```
+3. Update the `plugin.md` manifest in the parent directory.
 
 ---
 

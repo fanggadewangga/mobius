@@ -34,6 +34,8 @@ fi
 PLUGIN_PATH=""
 if [[ "$PLATFORM" == "android" || "$PLATFORM" == "flutter" || "$PLATFORM" == "ios" ]]; then
     PLUGIN_PATH="plugins/mobile"
+elif [[ "$PLATFORM" == "go" ]]; then
+    PLUGIN_PATH="plugins/backend"
 else
     PLUGIN_PATH="plugins/web"
 fi
@@ -53,5 +55,14 @@ for file in "${AGENT_FILES[@]}"; do
         echo -e "  ${YELLOW}⚠️ $file missing (not synced?)${NC}"
     fi
 done
+
+# 6. Check private contexts
+if [ -d "$MOBIUS_HOME/contexts/private" ]; then
+    if [ "$(ls -A "$MOBIUS_HOME/contexts/private" 2>/dev/null)" ]; then
+        echo -e "  ${GREEN}✓ private context linked and populated${NC}"
+    else
+        echo -e "  ${YELLOW}⚠️ private context linked but empty (run submodule update)${NC}"
+    fi
+fi
 
 echo -e "\n${BLUE}Doctor's report finished.${NC}"
