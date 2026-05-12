@@ -7,6 +7,17 @@ set -e
 
 echo -e "${BLUE}🔄 Initializing MOBIUS in current project...${NC}"
 
+# Check if current directory is empty
+if [ -z "$(ls -A . | grep -v '.mobius' | grep -v '.git')" ]; then
+    echo -e "${YELLOW}✨ This looks like a fresh project (empty directory).${NC}"
+    echo -e "Would you like to use the ${BLUE}'mobius new-project'${NC} workflow? (y/n)"
+    read -r USE_NEW_PROJECT
+    if [[ "$USE_NEW_PROJECT" =~ ^[Yy]$ ]]; then
+        mobius new-project start
+        exit 0
+    fi
+fi
+
 # 1. Detect Platform
 detect_platform() {
     # Mobile Detection

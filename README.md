@@ -21,7 +21,8 @@ Mobius follows a **Core + Plugins** architecture:
 - **Multi-Agent Support**: Generate unified context for Claude Code, Cursor (.mdc), GitHub Copilot, and more.
 - **Smart Platform Detection**: Automatically detects project types (Flutter, Go, React, etc.) and suggest relevant plugins.
 - **Financial-Grade Security**: Built-in Go security audit workflows with 15+ vulnerability patterns.
-- **Private Context Strategy**: Keep internal team conventions (internal service names, folder structures) private while keeping skills public.
+- **Multi-Role Project Initiation**: Full lifecycle workflow (Ideation → Ship) with 5 specialist agent roles.
+- **Private Context Strategy**: Keep internal team conventions private while keeping skills public.
 - **Deep Codebase Understanding**: Automated generation of Mermaid diagrams and service boundary maps.
 - **Impact Tracking (`mobius diff`)**: Measure AI efficiency gains (fewer rework iterations, higher build success).
 
@@ -91,6 +92,13 @@ Once initialized, your AI agent (Claude Code, Cursor, Windsurf, etc.) will read 
 - **Auto-Loading**: Agents like Cursor will automatically detect `.cursor/rules/mobius.mdc`.
 - **Keywords**: Use the triggers defined in the plugins (e.g., "pahami codebase", "audit security") to activate specific workflows.
 
+### 5. Multi-Role Workflow (v2.3)
+For fresh projects, use the multi-role agent system:
+```bash
+mobius new-project start
+```
+This activates the **Product**, **Lead**, **Worker**, **QA**, and **Reviewer** roles to guide your project from ideation to shipping.
+
 ---
 
 ## 🛠️ Management Commands
@@ -121,6 +129,18 @@ platform: mobile/flutter # or backend/go, etc.
 ...
 ```
 3. Update the `plugin.md` manifest in the parent directory.
+
+---
+
+## 🌟 Inspiration & Credits
+
+Mobius is built on the shoulders of giants. This framework wouldn't be possible without the influence of:
+
+- **[Superpowers](https://github.com/obra/superpowers)**: For the foundational "Goal-Driven Execution" and the automated workflow (Brainstorm → Plan → TDD → Review).
+- **[Andrej Karpathy Skills](https://github.com/forrestchang/andrej-karpathy-skills)**: For the cognitive principles (Think Before Coding, Simplicity First, Surgical Changes) that guide AI reasoning.
+- **[gstack](https://github.com/garrytan/gstack)**: For the multi-role virtual engineering team concept and YC-style project validation.
+- **[Agentic Project Management (APM)](https://github.com/sdi2200262/agentic-project-management)**: For the structured memory bank, handoff protocols, and spec-driven workflows.
+- **[awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)**: For the curated patterns and skill structures from world-class engineering teams.
 
 ---
 
