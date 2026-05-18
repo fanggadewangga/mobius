@@ -15,6 +15,7 @@ Version: 2.1.0
 - error-handling: Result/Either pattern | trigger: error, exception, failure
 - flutter-change-splash: Workflow for changing splash screen | trigger: splash screen, change splash
 - flutter-change-app-icon: Workflow for changing app icon | trigger: app icon, change icon
+- flutter-testing-coverage: Scoped unit/widget tests for SonarQube & Bamboo | trigger: unit test, widget test, ui test, coverage, sonarqube
 
 ## Android Skills
 - android-context: Android project conventions

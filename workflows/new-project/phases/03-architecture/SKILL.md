@@ -9,6 +9,11 @@ inspired-by: gstack /plan-eng-review, APM Planner, Karpathy think-before-coding
 
 # Phase 03 — Architecture & Technical Design
 
+## 🛑 WORKFLOW CONSTRAINTS
+- **NEVER** write actual feature code. Focus ONLY on the structure, patterns, and technical decisions.
+- **NEVER** skip to Phase 04 without an explicitly approved `ADR` and folder structure.
+- **ALWAYS** check `.mobius/memory/PROGRESS.md` to confirm you are in Phase 03.
+
 ## Engineer Lead Tasks
 
 ### Step 1: Read Spec Thoroughly

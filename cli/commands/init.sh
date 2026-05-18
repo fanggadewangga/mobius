@@ -13,6 +13,7 @@ if [ -z "$(ls -A . | grep -v '.mobius' | grep -v '.git')" ]; then
     echo -e "Would you like to use the ${BLUE}'mobius new-project'${NC} workflow? (y/n)"
     read -r USE_NEW_PROJECT
     if [[ "$USE_NEW_PROJECT" =~ ^[Yy]$ ]]; then
+        mkdir -p ".mobius"
         mobius new-project start
         exit 0
     fi

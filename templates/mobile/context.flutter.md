@@ -45,3 +45,4 @@
 - no-hardcoded-colors (always active)
 - flutter-change-splash (multi-flavor)
 - flutter-change-app-icon (multi-flavor)
+- flutter-testing-coverage (SonarQube-aware)

@@ -11,13 +11,18 @@ inspired-by: Superpowers brainstorming, gstack /office-hours
 ## Activation
 This skill activates automatically when a developer starts a new project or mentions the triggers above in a project without a specification.
 
+## 🛑 WORKFLOW CONSTRAINTS
+- **NEVER** provide code snippets, folder structures, or implementation plans in this phase.
+- **NEVER** ask more than one discovery question at a time.
+- **ALWAYS** check `.mobius/memory/PROGRESS.md` to confirm you are in Phase 01.
+
 ## Process
 
 ### Step 1: Activate Product Agent Role
 The agent adopts the Product Agent persona (see `roles/product-agent/ROLE.md`).
 
 ### Step 2: YC-Style Discovery Questions
-Ask these one by one — DO NOT ask all at once:
+Ask these one by one — **DO NOT** ask all at once. Wait for the developer's response before moving to the next question.
 
 ```
 Q1: "Tell me about the problem you want to solve. Not the features — the problem."

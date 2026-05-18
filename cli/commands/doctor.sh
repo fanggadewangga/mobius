@@ -11,7 +11,7 @@ echo -e "${BLUE}🏥 Running MOBIUS doctor...${NC}"
 if [ -d ".mobius" ]; then
     echo -e "  ${GREEN}✓ .mobius directory found${NC}"
 else
-    echo -e "  ${RED}✗ .mobius directory missing. Run 'mob init' first.${NC}"
+    echo -e "  ${RED}✗ .mobius directory missing. Run 'mobius init' first.${NC}"
 fi
 
 # 2. Check config file

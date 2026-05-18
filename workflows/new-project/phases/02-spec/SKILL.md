@@ -9,6 +9,11 @@ inspired-by: APM Spec document, gstack /plan-ceo-review
 
 # Phase 02 — Product Specification
 
+## 🛑 WORKFLOW CONSTRAINTS
+- **NEVER** write feature code or propose implementation plans. Focus ONLY on the "WHAT" (Product), not the "HOW" (Technical).
+- **NEVER** skip to Phase 03 without an explicitly approved `SPEC.md`.
+- **ALWAYS** check `.mobius/memory/PROGRESS.md` to confirm you are in Phase 02.
+
 ## Product Agent Tasks
 Transform the ideation summary into an actionable specification document for engineers.
 

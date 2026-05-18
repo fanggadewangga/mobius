@@ -17,6 +17,12 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 MOBIUS_HOME="${MOBIUS_HOME:-$(dirname "$SCRIPT_DIR")}"
 export MOBIUS_HOME
 
+# Define mobius function for internal delegation
+# This ensures that sourced scripts can call 'mobius' even if it's not in PATH
+mobius() {
+    "$MOBIUS_HOME/cli/mobius.sh" "$@"
+}
+
 # Check if command is provided
 if [ $# -eq 0 ]; then
     echo -e "${BLUE}🔄 MOBIUS — Mobile AI Skills Framework${NC}"

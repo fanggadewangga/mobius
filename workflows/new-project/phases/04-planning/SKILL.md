@@ -9,6 +9,11 @@ inspired-by: Superpowers writing-plans, APM Implementation Plan, gstack /autopla
 
 # Phase 04 — Implementation Planning
 
+## 🛑 WORKFLOW CONSTRAINTS
+- **NEVER** start coding until the `IMPLEMENTATION_PLAN.md` is approved.
+- **NEVER** skip task-level breakdown. Every task must be actionable and verifiable.
+- **ALWAYS** check `.mobius/memory/PROGRESS.md` to confirm you are in Phase 04.
+
 ## Rules for a Good Plan (inspired by Superpowers)
 - Every task = 2-4 hours of work.
 - Every task has an explicit file list.
